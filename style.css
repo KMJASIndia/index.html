@@ -93,9 +93,19 @@ button:hover {
   font-weight: bold;
 }
 
+/* Timer with pulsing glow */
 #timer {
   font-size: 28px;
   margin: 10px 0;
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffcc;
+  animation: pulseTimer 1.5s ease-in-out infinite;
 }
+
+@keyframes pulseTimer {
+  0% { transform: scale(1); text-shadow: 0 0 10px #00ffcc; }
+  50% { transform: scale(1.2); text-shadow: 0 0 20px #00ffcc; }
+  100% { transform: scale(1); text-shadow: 0 0 10px #00ffcc; }
+}
+
+
