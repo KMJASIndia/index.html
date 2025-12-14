@@ -7,7 +7,7 @@
 
 /* ===== Page Background ===== */
 body {
-  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   background: linear-gradient(135deg, #eef2f7, #f9fafb);
   color: #1f2937;
   display: flex;
@@ -22,10 +22,14 @@ body {
   background: #ffffff;
   padding: 36px 40px;
   border-radius: 14px;
+
+  /* Side Borders */
+  border-left: 4px solid #1d4ed8;
+  border-right: 4px solid #1d4ed8;
+
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     0 1px 3px rgba(0, 0, 0, 0.05);
-  border-top: 6px solid #1d4ed8;
 }
 
 /* ===== Header Title ===== */
@@ -35,7 +39,6 @@ h1 {
   font-weight: 700;
   color: #111827;
   margin-bottom: 28px;
-  letter-spacing: 0.3px;
 }
 
 /* ===== Form Inputs ===== */
@@ -44,26 +47,22 @@ textarea {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 16px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 15.5px;
-  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
   background: #ffffff;
-  transition: all 0.25s ease;
 }
 
-/* Placeholder */
 input::placeholder,
 textarea::placeholder {
-  color: #9ca3af;
+  color: #6b7280;
 }
 
-/* Focus State */
 input:focus,
 textarea:focus {
   outline: none;
   border-color: #1d4ed8;
-  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
 }
 
 /* ===== Passage / Typing Area ===== */
@@ -72,36 +71,33 @@ textarea {
   resize: none;
   line-height: 1.7;
   background: #f9fafb;
+  font-size: 16.5px;
 }
 
-/* ===== Primary Buttons ===== */
+/* ===== Buttons ===== */
 button {
   width: 100%;
   padding: 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  background: #1d4ed8;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
-  transition: all 0.25s ease;
 }
 
 button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(29, 78, 216, 0.35);
+  background: #1e40af;
 }
 
 button:disabled {
   background: #9ca3af;
   cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
 }
 
-/* ===== Metrics Panel ===== */
+/* ===== Metrics (Classic Exam Meter) ===== */
 #metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -110,36 +106,69 @@ button:disabled {
 }
 
 #metrics span {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 14px;
+  background: #ffffff;
+  border: 2px solid #374151;
+  border-radius: 4px;
+  padding: 10px;
   text-align: center;
-  font-size: 14.5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+#metrics span strong {
+  display: block;
+  font-size: 13px;
   font-weight: 600;
   color: #374151;
 }
 
-/* ===== Timer Highlight ===== */
+/* ===== Classic Timer ===== */
 #timer {
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
-  color: #b91c1c;
   margin-bottom: 18px;
+  transition: color 0.4s ease;
 }
 
-/* ===== Section Divider ===== */
+/* Timer Colors */
+.timer-green {
+  color: #166534;      /* 15–10 min */
+}
+
+.timer-light-green {
+  color: #4d7c0f;      /* 10–5 min */
+}
+
+.timer-very-light {
+  color: #a16207;      /* 5–1 min */
+}
+
+.timer-red {
+  color: #b91c1c;      /* Last minutes */
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* ===== Divider ===== */
 .section-divider {
   height: 1px;
-  background: #e5e7eb;
+  background: #374151;
   margin: 24px 0;
 }
 
-/* ===== Footer / Instructions ===== */
-.footer-note {
-  margin-top: 18px;
-  text-align: center;
-  font-size: 13.5px;
-  color: #6b7280;
+/* ===== Bottom Left HR Note ===== */
+.hr-note {
+  position: fixed;
+  bottom: 12px;
+  left: 14px;
+  font-size: 13px;
+  color: #374151;
+  font-family: "Times New Roman", Times, serif;
 }
