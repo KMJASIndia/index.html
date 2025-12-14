@@ -1,9 +1,9 @@
-/* Technical background wallpaper */
+/* Technical background wallpaper with mixed gradient */
 body {
   font-family: Arial, sans-serif;
   background: url('https://www.transparenttextures.com/patterns/circuit-board.png'),
-              linear-gradient(135deg, #1a1a1a, #333333);
-  color: #FFD700;
+              linear-gradient(135deg, #1a1a1a, #444444, #222222, #000000);
+  color: #ffffff; /* changed to white */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,25 +24,34 @@ body {
   background: rgba(0,0,0,0.7);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
 /* Animated company name */
 h1 {
   text-align: center;
-  font-size: 32px;
-  color: #FFD700;
-  text-shadow: 2px 2px 8px #000;
+  font-size: 48px; /* bigger */
+  font-weight: bold;
+  color: #ffffff; /* white font */
+  text-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00ff;
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  animation: moveText 10s linear infinite;
+  animation: moveText 8s linear infinite, glowCompany 2s ease-in-out infinite;
 }
 
+/* Horizontal movement */
 @keyframes moveText {
-  0% { transform: translateX(-100%); }
+  0% { transform: translateX(-120%); }
   50% { transform: translateX(0%); }
-  100% { transform: translateX(100%); }
+  100% { transform: translateX(120%); }
+}
+
+/* Glow + scale animation */
+@keyframes glowCompany {
+  0% { text-shadow: 0 0 10px #00ffcc; transform: scale(1); }
+  50% { text-shadow: 0 0 25px #ff00ff; transform: scale(1.2); }
+  100% { text-shadow: 0 0 10px #00ffcc; transform: scale(1); }
 }
 
 input, textarea, button {
@@ -51,9 +60,9 @@ input, textarea, button {
   margin: 10px 0;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #FFD700;
+  border: 1px solid #ffffff;
   background-color: #222;
-  color: #FFD700;
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -107,5 +116,3 @@ button:hover {
   50% { transform: scale(1.2); text-shadow: 0 0 20px #00ffcc; }
   100% { transform: scale(1); text-shadow: 0 0 10px #00ffcc; }
 }
-
-
