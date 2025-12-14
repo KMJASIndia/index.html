@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KMJAS Typing Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>KMJAS Typing Test</h1>
+  <form id="candidateForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="date" id="dob" placeholder="DOB" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Start Test</button>
+  </form>
+
+  <div id="testArea" style="display:none;">
+    <div id="timer">15:00</div>
+    <div id="passage"></div>
+    <textarea id="typingArea" placeholder="Start typing here..."></textarea>
+    <div id="metrics">
+      <span id="wpm">WPM: 0</span>
+      <span id="accuracy">Accuracy: 100%</span>
+      <span id="errors">Errors: 0</span>
+    </div>
+    <button id="submitBtn">Submit</button>
+  </div>
+</div>
+<script src="passages.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
