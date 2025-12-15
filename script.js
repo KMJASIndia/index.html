@@ -1,6 +1,6 @@
 const BACKEND_URL = "https://script.google.com/macros/s/AKfycbz9VpxPTRvhIrJyg-ZQ2AFqpXXQYtvqsFyWufnKlhCwUf2ePNBv-EHLZKKE8iDSU46RTQ/exec";
 let timer;
-let totalTime = 15 * 60; // 15 minutes
+let totalTime = 10 * 60; // 10 minutes
 let startTime;
 let currentPassage = 0;
 
@@ -38,7 +38,6 @@ function updateTimer() {
     return;
   }
 
-  // Classic clock hand rotation
   const seconds = remaining % 60;
   const minutes = Math.floor(remaining / 60) % 60;
   const hours = Math.floor(remaining / 3600);
@@ -77,10 +76,13 @@ function updateMetrics() {
   const minutes = (Date.now() - startTime) / 60000;
   const wpm = minutes > 0 ? Math.round((typedLen / 5) / minutes) : 0;
 
-  // Update meters
   document.getElementById('wpmMeter').value = wpm;
   document.getElementById('accuracyMeter').value = accuracy;
   document.getElementById('errorMeter').value = errors;
+
+  document.getElementById('wpmValue').textContent = wpm;
+  document.getElementById('accuracyValue').textContent = accuracy + "%";
+  document.getElementById('errorValue').textContent = errors;
 }
 
 submitBtn.addEventListener('click', submitTest);
@@ -100,7 +102,7 @@ function sendData() {
     wpm: document.getElementById('wpmMeter').value,
     accuracy: document.getElementById('accuracyMeter').value,
     errors: document.getElementById('errorMeter').value,
-    photo: "" // no photo now
+    photo: ""
   };
 
   fetch(BACKEND_URL, {
@@ -118,7 +120,6 @@ function sendData() {
     });
 }
 
-// Anti-cheat
 typingArea.onpaste = () => false;
 document.oncontextmenu = () => false;
 document.oncopy = () => false;
