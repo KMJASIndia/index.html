@@ -1,37 +1,61 @@
-<div id="testArea" style="display:none;">
-  <!-- Classic Clock -->
-  <div id="clock">
-    <div class="clock-face">
-      <div class="hand hour-hand"></div>
-      <div class="hand min-hand"></div>
-      <div class="hand second-hand"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMJAS Typing Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>KMJAS Typing Test</h1>
+    <form id="candidateForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="date" id="dob" placeholder="DOB" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <button type="submit">Start Test</button>
+    </form>
+
+    <div id="testArea" style="display:none;">
+      <!-- Classic Clock -->
+      <div id="clock">
+        <div class="clock-face">
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+        </div>
+      </div>
+
+      <div id="passage"></div>
+      <textarea id="typingArea" placeholder="Start typing here..."></textarea>
+
+      <!-- Metrics as meters -->
+      <div id="metrics">
+        <div>
+          <label for="wpmMeter">WPM</label>
+          <meter id="wpmMeter" min="0" max="200" value="0"></meter>
+        </div>
+        <div>
+          <label for="accuracyMeter">Accuracy</label>
+          <meter id="accuracyMeter" min="0" max="100" value="100"></meter>
+        </div>
+        <div>
+          <label for="errorMeter">Errors</label>
+          <meter id="errorMeter" min="0" max="100" value="0"></meter>
+        </div>
+      </div>
+
+      <button id="submitBtn">Submit</button>
     </div>
   </div>
 
-  <div id="passage"></div>
-  <textarea id="typingArea" placeholder="Start typing here..."></textarea>
-
-  <!-- Metrics as meters -->
-  <div id="metrics">
-    <div>
-      <label for="wpmMeter">WPM</label>
-      <meter id="wpmMeter" min="0" max="200" value="0"></meter>
-    </div>
-    <div>
-      <label for="accuracyMeter">Accuracy</label>
-      <meter id="accuracyMeter" min="0" max="100" value="100"></meter>
-    </div>
-    <div>
-      <label for="errorMeter">Errors</label>
-      <meter id="errorMeter" min="0" max="100" value="0"></meter>
-    </div>
+  <!-- Footer Note -->
+  <div class="footer-note">
+    In case of any issue kindly contact with 
+    <button onclick="window.location.href='mailto:hr.support@kmjasindia.com'">hr.support@kmjasindia.com</button>
   </div>
 
-  <button id="submitBtn">Submit</button>
-</div>
-
-<!-- Footer Note -->
-<div class="footer-note">
-  In case of any issue kindly contact with 
-  <button onclick="window.location.href='mailto:hr.support@kmjasindia.com'">hr.support@kmjasindia.com</button>
-</div>
+  <script src="passages.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
