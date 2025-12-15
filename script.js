@@ -40,11 +40,11 @@ function updateTimer() {
 
   // Classic clock hand rotation
   const seconds = remaining % 60;
-  const minutes = Math.floor(remaining / 60);
-  const hours = Math.floor(minutes / 60);
+  const minutes = Math.floor(remaining / 60) % 60;
+  const hours = Math.floor(remaining / 3600);
 
   const secondDegrees = ((seconds / 60) * 360) + 90;
-  const minuteDegrees = ((minutes % 60) / 60) * 360 + 90;
+  const minuteDegrees = ((minutes / 60) * 360) + 90;
   const hourDegrees = ((hours % 12) / 12) * 360 + 90;
 
   document.querySelector('.second-hand').style.transform = `rotate(${secondDegrees}deg)`;
