@@ -1,11 +1,6 @@
-/* ===== Professional Reset ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ===== Reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ===== Page Background ===== */
 body {
   font-family: "Times New Roman", Times, serif;
   background: linear-gradient(135deg, #fef2f2, #fff5f5);
@@ -16,7 +11,6 @@ body {
   height: 100vh;
 }
 
-/* ===== Main Card Container ===== */
 .container {
   width: 860px;
   background: #ffffff;
@@ -27,39 +21,32 @@ body {
   border-top: 6px solid #b91c1c;
 }
 
-/* ===== Header Title ===== */
 h1 {
   text-align: center;
   font-size: 34px;
   font-weight: 700;
   color: #7f1d1d;
   margin-bottom: 28px;
-  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
-/* ===== Form Inputs ===== */
-input,
-textarea {
+input, textarea {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 16px;
   border-radius: 6px;
   border: 1.8px solid #9f1239;
   font-size: 16px;
-  font-family: "Times New Roman", Times, serif;
   background: #ffffff;
-  transition: all 0.25s ease;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #6b7280;
-  font-style: italic;
+textarea {
+  height: 230px;
+  resize: none;
+  line-height: 1.8;
+  background: #fef2f2;
+  border: 2px solid #991b1b;
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #b91c1c;
-  box-shadow: 0 0 0 3px rgba(185, 28, 28
+button {
+  width
