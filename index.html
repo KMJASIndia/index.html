@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KMJAS Typing Test</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>KMJAS Typing Test</h1>
     <form id="candidateForm">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="date" id="dob" required>
-      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="date" id="dob" required />
+      <input type="email" id="email" placeholder="Email" required />
       <button type="submit">Start Test</button>
     </form>
 
@@ -29,19 +29,22 @@
       <div id="passage"></div>
       <textarea id="typingArea" placeholder="Start typing here..."></textarea>
 
-      <!-- Metrics as meters -->
+      <!-- Metrics -->
       <div id="metrics">
         <div>
           <label for="wpmMeter">WPM</label>
           <meter id="wpmMeter" min="0" max="200" value="0"></meter>
+          <div id="wpmValue" class="metric-value">0</div>
         </div>
         <div>
           <label for="accuracyMeter">Accuracy</label>
           <meter id="accuracyMeter" min="0" max="100" value="100"></meter>
+          <div id="accuracyValue" class="metric-value">100%</div>
         </div>
         <div>
           <label for="errorMeter">Errors</label>
           <meter id="errorMeter" min="0" max="100" value="0"></meter>
+          <div id="errorValue" class="metric-value">0</div>
         </div>
       </div>
 
